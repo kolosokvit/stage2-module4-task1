@@ -13,7 +13,10 @@ public class Employee {
     private String email;
     private String carNumber;
 
-    public Employee(EmployeeBuilder employeeBuilder) {
+    public Employee() {
+
+    }
+    private Employee(EmployeeBuilder employeeBuilder) {
         name = employeeBuilder.name;
         lastName = employeeBuilder.lastName;
         position = employeeBuilder.position;
@@ -75,7 +78,6 @@ public class Employee {
     }
 
     public static class EmployeeBuilder {
-        // Write your code here!
         private String name;
         private String lastName;
         private String position;
