@@ -85,6 +85,10 @@ public class Employee {
         private String email;
         private String carNumber;
 
+        public EmployeeBuilder() {
+
+        }
+
         public EmployeeBuilder setName(String name) {
             this.name = name;
             return this;
