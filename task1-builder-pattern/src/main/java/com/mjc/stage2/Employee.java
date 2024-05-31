@@ -14,15 +14,6 @@ public class Employee {
     private String carNumber;
 
     public Employee() {
-
-    }
-    private Employee(EmployeeBuilder employeeBuilder) {
-        name = employeeBuilder.name;
-        lastName = employeeBuilder.lastName;
-        position = employeeBuilder.position;
-        phone = employeeBuilder.phone;
-        email = employeeBuilder.email;
-        carNumber = employeeBuilder.carNumber;
     }
 
     public String getName() {
@@ -78,43 +69,43 @@ public class Employee {
     }
 
     public static class EmployeeBuilder {
-        private String name;
-        private String lastName;
-        private String position;
-        private String phone;
-        private String email;
-        private String carNumber;
+        private Employee employee;
 
         public EmployeeBuilder() {
-
+            this.employee = new Employee();
         }
 
         public EmployeeBuilder setName(String name) {
-            this.name = name;
+            employee.setName(name);
             return this;
         }
+
         public EmployeeBuilder setLastName(String lastName) {
-            this.lastName = lastName;
+            employee.setLastName(lastName);
             return this;
         }
+
         public EmployeeBuilder setPosition(String position) {
-            this.position = position;
+            employee.setPosition(position);
             return this;
         }
+
         public EmployeeBuilder setPhone(String phone) {
-            this.phone = phone;
+            employee.setPhone(phone);
             return this;
         }
+
         public EmployeeBuilder setEmail(String email) {
-            this.email = email;
+            employee.setEmail(email);
             return this;
         }
         public EmployeeBuilder setCarNumber(String carNumber) {
-            this.carNumber = carNumber;
+            employee.setCarNumber(carNumber);
             return this;
         }
+
         public Employee build() {
-            return new Employee(this);
+            return  employee;
         }
     }
 }
